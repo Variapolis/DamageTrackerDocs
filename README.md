@@ -24,14 +24,13 @@ Usage for the plugin is pretty simple.
 
 1. Ensure that you have a reference to the DamageTrackerLib.dll. You ************DO NOT************ need a reference to the DamageTrackerFramework, but it **MUST** be installed and running in GTA V when your plugin is running.
 2. When your plugin is loaded you must start the DamageTrackerService with `DamageTrackerService.Start()` (You must also have a `using DamageTrackerLib;` statement at the top of the file.)
-3. Subscribe to the events with a custom function. I.E: `DamageTrackerService.OnPedTookDamage += MyCustomFunction;` and `DamageTrackerService.OnPlayerTookDamage += MyCustomFunction;` Custom function must be in the form of the [Event Delegate](https://www.notion.so/Event-Delegate-d78204a9fa90432bbf841d77a25a71c4) 
+3. Subscribe to the events with a custom function. I.E: `DamageTrackerService.OnPedTookDamage += MyCustomFunction;` and `DamageTrackerService.OnPlayerTookDamage += MyCustomFunction;` Custom function must be in the form of the [Event Delegate](#event-delegate)
 4. Unsubscribe to the events when the plugin is unloaded. I.E: `DamageTrackerService.OnPedTookDamage -= MyCustomFunction;` and `DamageTrackerService.OnPlayerTookDamage -= MyCustomFunction;`
 5. Stop the DamageTrackerService when the plugin is unloaded with `DamageTrackerService.Stop()`
 
 Below are two example plugins, the full source code for them can be found here: [Variapolis/DamageTrackerExample (github.com)](https://github.com/Variapolis/DamageTrackerExample)
 
-- RPH Plugin
-    
+#### RPH Plugin
     ```csharp
     public class EntryPoint
         {
@@ -62,9 +61,9 @@ Below are two example plugins, the full source code for them can be found here: 
                                  $"\n~r~{damageInfo.BoneInfo.BoneId.ToString()} {damageInfo.BoneInfo.Limb.ToString()} {damageInfo.BoneInfo.BodyRegion.ToString()}");
         }
     ```
-    
-- LSPDFR Plugin
-    
+
+####LSPDFR Plugin
+
     ```csharp
     public class Main : Plugin
         {
@@ -102,7 +101,7 @@ Below are two example plugins, the full source code for them can be found here: 
             public override void Finally() => Game.DisplayNotification("DTF LSPDFR Example Unloaded.");
         }
     ```
-    
+
 
 ---
 
@@ -137,7 +136,7 @@ public struct PedDamageInfo
 }
 ```
 
-WeaponDamageInfo provides information on what kind of weapon was used to damage the Ped. This can include firearms and other environmental things such as falling. `WeaponHashes` are grouped into categories such as `DamageType` and `DamageGroup`. The relationships can be found in [Weapon Lookups](https://www.notion.so/Weapon-Lookups-a145a39165fa404b98a23ec8aa20a403) 
+WeaponDamageInfo provides information on what kind of weapon was used to damage the Ped. This can include firearms and other environmental things such as falling. `WeaponHashes` are grouped into categories such as `DamageType` and `DamageGroup`. The relationships can be found in [Weapon Lookups](#weapon-lookups)
 
 ```csharp
 [Serializable]
@@ -149,7 +148,7 @@ public struct WeaponDamageInfo
 }
 ```
 
-BoneDamageInfo provides information on what part of the body the Ped was damaged on. `BoneIds` have been grouped into categories such as `Limb` and `BodyRegion`. The relationships can be found in [Bone Lookups](https://www.notion.so/Bone-Lookups-c04988cd73b94323b59350b9d60a62ec) 
+BoneDamageInfo provides information on what part of the body the Ped was damaged on. `BoneIds` have been grouped into categories such as `Limb` and `BodyRegion`. The relationships can be found in [Bone Lookups](#bone-lookups)
 
 ```csharp
 [Serializable]
@@ -164,8 +163,8 @@ public struct BoneDamageInfo
 ### Bone Lookups
 
 - Lookup Table
-    
-    
+
+
     | BoneId.Root | Limb.Stomach | BodyRegion.Torso |
     | --- | --- | --- |
     | BoneId.LeftThumb1 | Limb.LeftArm | BodyRegion.Arms |
@@ -228,8 +227,8 @@ public struct BoneDamageInfo
 ### Weapon Lookups
 
 - Lookup Table
-    
-    
+
+
     | WeaponHash.Antique_Cavalry_Dagger | DamageGroup.Melee | DamageType.MeleeStab |
     | --- | --- | --- |
     | WeaponHash.Baseball_Bat | DamageGroup.Melee | DamageType.MeleeBlunt |
@@ -272,7 +271,7 @@ public struct BoneDamageInfo
     | WeaponHash.Combat_PDW | DamageGroup.Bullet | DamageType.SMG |
     | WeaponHash.Machine_Pistol | DamageGroup.Bullet | DamageType.SMG |
     | WeaponHash.Mini_SMG | DamageGroup.Bullet | DamageType.SMG |
-    | WeaponHash.Unholy_Hellbringer | DamageGroup.Bullet | http://damagetype.mg/ |
+    | WeaponHash.Unholy_Hellbringer | DamageGroup.Bullet | DamageType.MG |
     | WeaponHash.Pump_Shotgun | DamageGroup.Bullet | DamageType.Shotgun |
     | WeaponHash.Pump_Shotgun_MK2 | DamageGroup.Bullet | DamageType.Shotgun |
     | WeaponHash.Sawed_Off_Shotgun | DamageGroup.Bullet | DamageType.Shotgun |
@@ -292,10 +291,10 @@ public struct BoneDamageInfo
     | WeaponHash.Bullpup_Rifle | DamageGroup.Bullet | DamageType.Rifle |
     | WeaponHash.Bullpup_Rifle_MK2 | DamageGroup.Bullet | DamageType.Rifle |
     | WeaponHash.Compact_Rifle | DamageGroup.Bullet | DamageType.Rifle |
-    | http://weaponhash.mg/ | DamageGroup.Bullet | http://damagetype.mg/ |
-    | WeaponHash.Combat_MG | DamageGroup.Bullet | http://damagetype.mg/ |
-    | WeaponHash.Combat_MGMK2 | DamageGroup.Bullet | http://damagetype.mg/ |
-    | WeaponHash.Gusenberg_Sweeper | DamageGroup.Bullet | http://damagetype.mg/ |
+    | WeaponHash.MG | DamageGroup.Bullet | DamageType.MG |
+    | WeaponHash.Combat_MG | DamageGroup.Bullet | DamageType.MG |
+    | WeaponHash.Combat_MGMK2 | DamageGroup.Bullet | DamageType.MG |
+    | WeaponHash.Gusenberg_Sweeper | DamageGroup.Bullet | DamageType.MG |
     | WeaponHash.Sniper_Rifle | DamageGroup.Bullet | DamageType.Sniper |
     | WeaponHash.Heavy_Sniper | DamageGroup.Bullet | DamageType.Sniper |
     | WeaponHash.Heavy_Sniper_MK2 | DamageGroup.Bullet | DamageType.Sniper |
