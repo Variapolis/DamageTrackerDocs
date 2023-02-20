@@ -31,7 +31,7 @@ Usage for the plugin is pretty simple.
 Below are two example plugins, the full source code for them can be found here: [Variapolis/DamageTrackerExample (github.com)](https://github.com/Variapolis/DamageTrackerExample)
 
 #### RPH Plugin
-    ```csharp
+```csharp
     public class EntryPoint
         {
             private static GameFiber GameFiber;
@@ -60,11 +60,10 @@ Below are two example plugins, the full source code for them can be found here: 
                                  $"\n~y~{damageInfo.WeaponInfo.Hash.ToString()} {damageInfo.WeaponInfo.Type.ToString()} {damageInfo.WeaponInfo.Group.ToString()}" +
                                  $"\n~r~{damageInfo.BoneInfo.BoneId.ToString()} {damageInfo.BoneInfo.Limb.ToString()} {damageInfo.BoneInfo.BodyRegion.ToString()}");
         }
-    ```
+```
+#### LSPDFR Plugin
 
-####LSPDFR Plugin
-
-    ```csharp
+```csharp
     public class Main : Plugin
         {
             public override void Initialize()
@@ -100,7 +99,7 @@ Below are two example plugins, the full source code for them can be found here: 
     
             public override void Finally() => Game.DisplayNotification("DTF LSPDFR Example Unloaded.");
         }
-    ```
+```
 
 
 ---
