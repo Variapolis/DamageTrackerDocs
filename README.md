@@ -4,8 +4,6 @@ DamageTrackerFramework is a GTA V Plugin that provides a framework and API for d
 
 ## Table of Contents
 
----
-
 ## Installation
 
 For installation, the users MUST do the following:
@@ -13,8 +11,6 @@ For installation, the users MUST do the following:
 1. Install DamageTrackerLib.dll to their GTA V directory.
 2. Install DamageTrackerFramework.dll to their plugins folder.
 3. DamageTrackerFramework ********MUST******** be started in RagePluginHook.
-
----
 
 ## Usage
 
@@ -102,8 +98,6 @@ Below are two example plugins, the full source code for them can be found here: 
 ```
 
 
----
-
 ## Documentation
 
 ### DamageTrackerService Start() and Stop()
@@ -163,9 +157,8 @@ public struct BoneDamageInfo
 
 - Lookup Table
 
-
+    | BoneID | Limb | BodyRegion |
     | BoneId.Root | Limb.Stomach | BodyRegion.Torso |
-    | --- | --- | --- |
     | BoneId.LeftThumb1 | Limb.LeftArm | BodyRegion.Arms |
     | BoneId.LeftThumb2 | Limb.LeftArm | BodyRegion.Arms |
     | BoneId.LeftRingFinger1 | Limb.LeftArm | BodyRegion.Arms |
@@ -228,8 +221,8 @@ public struct BoneDamageInfo
 - Lookup Table
 
 
+    | WeaponHash | DamageGroup | DamageType |
     | WeaponHash.Antique_Cavalry_Dagger | DamageGroup.Melee | DamageType.MeleeStab |
-    | --- | --- | --- |
     | WeaponHash.Baseball_Bat | DamageGroup.Melee | DamageType.MeleeBlunt |
     | WeaponHash.Bottle | DamageGroup.Melee | DamageType.MeleeStab |
     | WeaponHash.Crowbar | DamageGroup.Melee | DamageType.MeleeBlunt |
