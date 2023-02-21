@@ -3,7 +3,7 @@
 DamageTrackerFramework is a GTA V Plugin that provides a framework and API for developers to get performant, reliable, and detailed events for when Peds are damaged.
 
 ## Installation
-The release download page can be found here: https://www.lcpdfr.com/downloads/gta5mods/scripts/42767-damage-tracker-framework/
+The release download page can be found here: [LSPDFR DamageTrackerFramework](https://www.lcpdfr.com/downloads/gta5mods/scripts/42767-damage-tracker-framework/)
 
 For installation, the users MUST do the following:
 
@@ -23,7 +23,7 @@ Usage for the plugin is pretty simple.
 4. Unsubscribe to the events when the plugin is unloaded. I.E: `DamageTrackerService.OnPedTookDamage -= MyCustomFunction;` and `DamageTrackerService.OnPlayerTookDamage -= MyCustomFunction;`
 5. Stop the DamageTrackerService when the plugin is unloaded with `DamageTrackerService.Stop()`
 
-Below are two example plugins, the full source code for them can be found here: [Variapolis/DamageTrackerExample (github.com)](https://github.com/Variapolis/DamageTrackerExample)
+Below are two example plugins, the full source code for them can be found here: [Variapolis/DamageTrackerExample](https://github.com/Variapolis/DamageTrackerExample)
 
 #### RPH Plugin
 ```csharp
