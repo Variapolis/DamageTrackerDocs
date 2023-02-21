@@ -157,7 +157,9 @@ public struct BoneDamageInfo
 
 - Lookup Table
 
-    | BoneID | Limb | BodyRegion |
+
+    | BoneId | Limb | BodyRegion |
+    | --- | --- | --- |
     | BoneId.Root | Limb.Stomach | BodyRegion.Torso |
     | BoneId.LeftThumb1 | Limb.LeftArm | BodyRegion.Arms |
     | BoneId.LeftThumb2 | Limb.LeftArm | BodyRegion.Arms |
@@ -222,6 +224,7 @@ public struct BoneDamageInfo
 
 
     | WeaponHash | DamageGroup | DamageType |
+    | --- | --- | --- |
     | WeaponHash.Antique_Cavalry_Dagger | DamageGroup.Melee | DamageType.MeleeStab |
     | WeaponHash.Baseball_Bat | DamageGroup.Melee | DamageType.MeleeBlunt |
     | WeaponHash.Bottle | DamageGroup.Melee | DamageType.MeleeStab |
